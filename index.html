@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kerr Blackhole Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <header class="topbar">
+      <h1>Kerr Blackhole Lab</h1>
+      <p>悬停名词看解释，点击进入参数交互</p>
+    </header>
+
+    <div id="hotspots" class="hotspots"></div>
+
+    <aside id="inspector" class="inspector" aria-hidden="true">
+      <div class="inspector-head">
+        <strong id="inspector-title">交互面板</strong>
+        <button id="close-inspector" type="button">×</button>
+      </div>
+
+      <p id="inspector-desc" class="inspector-desc"></p>
+
+      <section class="controls">
+        <label>
+          质量 M (太阳质量)
+          <input id="mass" type="range" min="2" max="60" value="10" step="0.5" />
+          <span id="mass-value"></span>
+        </label>
+
+        <label>
+          自旋 a* (0~0.999)
+          <input id="spin" type="range" min="0" max="0.999" value="0.92" step="0.001" />
+          <span id="spin-value"></span>
+        </label>
+
+        <label>
+          吸积率 (Eddington 比)
+          <input id="accretion" type="range" min="0.05" max="1.5" value="0.6" step="0.01" />
+          <span id="accretion-value"></span>
+        </label>
+
+        <label>
+          时间流速
+          <input id="time-scale" type="range" min="0" max="4" value="1.2" step="0.05" />
+          <span id="time-scale-value"></span>
+        </label>
+
+        <button id="toggle" type="button">暂停</button>
+      </section>
+
+      <section class="status" id="status"></section>
+    </aside>
+
+    <div id="tooltip" class="tooltip" aria-hidden="true"></div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
